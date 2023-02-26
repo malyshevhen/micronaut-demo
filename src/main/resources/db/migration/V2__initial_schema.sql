@@ -1,0 +1,12 @@
+ALTER TABLE persons RENAME CONSTRAINT pk_persons TO pk_users;
+ALTER TABLE persons RENAME CONSTRAINT uk_persons_email TO uk_users_email;
+ALTER TABLE persons ADD column nickname TEXT;
+ALTER TABLE persons ADD column password TEXT;
+ALTER TABLE persons ALTER COLUMN nickname SET NOT NULL;
+ALTER TABLE persons ALTER COLUMN password SET NOT NULL;
+ALTER TABLE persons ADD CONSTRAINT uk_persons_nickname UNIQUE (nickname);
+ALTER TABLE persons ADD CONSTRAINT uk_persons_password UNIQUE (password);
+ALTER TABLE notes RENAME CONSTRAINT fk_notes_persons TO fk_notes_users;
+CREATE INDEX idx_notes_user_id ON notes(person_id);
+ALTER TABLE notes RENAME COLUMN person_id TO user_id;
+ALTER TABLE persons RENAME TO users;
