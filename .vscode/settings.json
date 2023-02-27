@@ -1,0 +1,15 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "MICRONAUT_DEMO",
+            "database": "micronaut_demo",
+            "username": "micronaut",
+            "password": "demo"
+        }
+    ],
+    "java.format.settings.url": "C:\\Users\\t\\OneDrive\\Документи\\GitHub\\micronaut-demo\\.vscode\\java-formatter.xml"
+}

@@ -8,4 +8,8 @@ public interface NoteService {
     List<Note> getByPersonId(Long id);
     
     Note add(Note note);
+
+    Note update(Note note);
+
+    void deleteById(Long id);
 }

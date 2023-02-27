@@ -18,11 +18,23 @@ public class NoteServiceImpl implements NoteService {
     @Transactional
     public List<Note> getByPersonId(Long id) {
         
-        return noteRepository.findByPersonId(id);
+        return noteRepository.findByUserId(id);
     }
     
     @Override
     public Note add(Note note) {
         return noteRepository.save(note);
+    }
+
+    @Override
+    @Transactional
+    public Note update(Note note) {
+        return noteRepository.update(note);
+    }
+
+    @Override
+    @Transactional
+    public void deleteById(Long id) {
+        noteRepository.deleteById(id);
     }
 }

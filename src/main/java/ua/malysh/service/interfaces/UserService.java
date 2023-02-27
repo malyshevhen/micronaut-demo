@@ -1,7 +1,7 @@
 package ua.malysh.service.interfaces;
 
 import ua.malysh.domain.User;
-import ua.malysh.dto.UserWithNotesPublicDto;
+import ua.malysh.dto.PublicUserWithNotesDto;
 
 import java.util.List;
 
@@ -10,7 +10,9 @@ public interface UserService {
     
     User getById(Long id);
     
-    UserWithNotesPublicDto getByIdFetchNotes(Long id);
+    PublicUserWithNotesDto getByIdFetchNotes(Long id);
     
     User add(User user);
+
+    void deleteById(Long id);
 }
